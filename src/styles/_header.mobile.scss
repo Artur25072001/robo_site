@@ -1,0 +1,9 @@
+@use "./kit/mixins" as mx;
+
+@include mx.mq("tablet", max) {
+  .header {
+    padding: 40px 0 60px;
+  }
+  
+
+}

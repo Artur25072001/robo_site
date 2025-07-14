@@ -1,0 +1,47 @@
+@use "sass:map";
+@use "./variables" as v;
+@use "./functions" as f;
+
+@mixin mq($width, $type: min) {
+  @if map.has_key(v.$breakpoints, $width) {
+    $width: map.get(v.$breakpoints, $width);
+
+    @if $type == max {
+      $width: $width - 0.02px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin font-face($name, $file, $f-style: null, $f-display: "swap") {
+  @font-face {
+    $style: null;
+
+    @if $f-style == italic {
+      $style: "-#{$f-style}";
+    }
+
+    font-family: "#{$name}";
+    src: url("../assets/fonts/#{$file}#{$style}.ttf") format("truetype");
+    font-style: $f-style;
+    font-display: $f-display;
+  }
+}
+
+@mixin text-color($key) {
+  $value: f.color($key);
+  @if $value != null {
+    color: $value;
+  }
+}
+
+@mixin bg-color($key) {
+  $value: f.color($key);
+  @if $value != null {
+    background-color: $value;
+  }
+}
+

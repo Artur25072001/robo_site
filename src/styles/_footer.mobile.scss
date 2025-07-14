@@ -1,0 +1,24 @@
+@use "./kit/mixins" as mx;
+
+
+@include mx.mq("mobile") {
+  .footer {
+  }
+
+  .footer__contacts {
+  }
+
+  .footer__logo {
+  }
+
+  .footer__logo-img {
+  }
+
+  .footer__logo-text {
+  }
+
+  .footer__copyrights {
+  }
+}
+
+

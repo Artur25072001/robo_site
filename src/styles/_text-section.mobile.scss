@@ -1,0 +1,4 @@
+@use "./kit/mixins" as mx;
+
+@include mx.mq("mobile") {
+}

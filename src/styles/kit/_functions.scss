@@ -1,0 +1,11 @@
+@use "sass:map";
+@use "./variables" as v;
+
+@function color($key) {
+  @if map-has-key(v.$colors, $key) {
+    @return map-get(v.$colors, $key);
+  } @else {
+    @warn "Цвет `#{$key}` не найден в карте \$colors.";
+    @return null;
+  }
+}

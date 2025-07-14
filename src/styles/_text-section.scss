@@ -1,0 +1,110 @@
+@use "./text-section.mobile";
+@use "./kit/functions" as f;
+@use "./kit/mixins" as mx;
+
+@include mx.font-face("Oswald Regular", "Oswald-Regular");
+@include mx.font-face("Poppins Regular", "Poppins-Regular");
+@include mx.font-face("SourceSansPro Regular", "source-sans-pro.regular");
+@include mx.font-face("Roboto Regular", "Roboto-Regular");
+
+.text-section {
+  background-color: f.color("main-text"); 
+  padding: 5.556vw 1.389vw; 
+  display: flex;
+  justify-content: center;
+
+  .text-section__container {
+    max-width: 62.5vw;
+    width: 100%;
+    text-align: center;
+
+    .text-section__title {
+      font-size: 3.681vw; 
+      color: f.color("header-hero");
+      line-height: 4.444vw; 
+      margin-bottom: 1.667vw; 
+      font-family: "Roboto Regular", sans-serif;
+    }
+
+    .text-section__desc {
+      font-size: 1.667vw; 
+      line-height: 2.222vw; 
+      color: f.color("header-desc");
+      margin-bottom: 2.778vw; 
+      font-family: "Poppins Regular", sans-serif;
+    }
+    @include mx.mq("phone", max) {
+    &__title  {
+      font-family: "SourceSansPro Regular", sans-serif;
+    }
+  }
+
+    .text-section__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.778vw; 
+      text-align: left;
+      color: f.color("header-desc");
+      font-size: 1.111vw; 
+      line-height: 1.528vw; 
+      margin-bottom: 2.778vw; 
+      font-family: "SourceSansPro Regular", sans-serif;
+    }
+
+    .text-section__btn {
+      display: inline-block;
+      padding: 0.694vw 1.528vw; 
+      background-color: f.color("accent");
+      color: #101415;
+      border: none;
+      border-radius: 1.25vw; 
+      font-size: 0.972vw; 
+      line-height: 1.806vw; 
+      font-family: "Oswald Regular", sans-serif;
+      cursor: pointer;
+      transition:transform 0.3s ease;
+      transform-origin: center left;
+
+      &:hover {
+  
+        transform: rotate(7deg);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .text-section__container {
+      max-width: 100%;
+      display: flex;
+      gap: 5vh;
+      flex-direction: column;
+      padding: 5vh 0 5vh 0;
+      align-items: center;
+
+      .text-section__title {
+        font-size: 32px;
+        line-height: 42px;
+      }
+
+      .text-section__desc {
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      .text-section__content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        font-size: 16px;
+        line-height: 22px;
+        gap: 20px;
+      }
+
+      .text-section__btn {
+        font-size: 14px;
+        padding: 10px 20px;
+        border-radius: 12px;
+        max-width: 27vw;
+      }
+    }
+  }
+}

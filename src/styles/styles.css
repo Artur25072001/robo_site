@@ -1,0 +1,62 @@
+.site-header {
+  padding: 2rem;
+  font-size: 1.8rem;
+}
+@media only screen and (min-width: 768px) {
+  .site-header {
+    padding-top: 4rem;
+    font-size: 2.4rem;
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  .header {
+    padding: 40px 0 140px;
+  }
+}
+.nav {
+  background-color: #ef8767;
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../assets/fonts/SourceCodePro.ttf") format("truetype");
+  font-display: "swap";
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../assets/fonts/SourceCodePro-italic.ttf") format("truetype");
+  font-style: italic;
+  font-display: "swap";
+}
+.page {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 480px;
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+.main {
+  background-color: #ffe5e0;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,90 @@
+@use "./footer.mobile";
+@use "./kit/mixins" as mx;
+
+@include mx.font-face("SourceSansPro Regular", "source-sans-pro.regular");
+
+.footer {
+  background-color: #000;
+  @include mx.text-color("main-text");
+  padding: 40px 20px;
+  font-size: 14px;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 11vw;
+  }
+   
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &-img {
+      margin-bottom: 8px;
+      width: 90px;
+      height: 90px;
+    }
+
+    &-text {
+      font-size: 12px;
+      letter-spacing: 2px;
+      @include mx.text-color("main-text");
+      font-family: "SourceSansPro Regular", sans-serif;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-style: normal;
+
+    a {
+      text-decoration: none;
+      color: rgba($color: #fff, $alpha: 0.7);
+      transition: color 0.3s;
+      font-family: "SourceSansPro Regular", sans-serif;
+
+      &:hover {
+        color: #777;
+      }
+    }
+  }
+
+  &__copyrights {
+    color: rgba($color: #fff, $alpha: 0.7);
+    font-size: 12px;
+    white-space: nowrap;
+    font-family: "SourceSansPro Regular", sans-serif;
+    margin-left: 18vw;
+  }
+
+  @include mx.mq("tablet", max) {
+    &__container {
+      justify-content: space-around;
+      gap: 0;
+    }
+    &__copyrights{
+      margin-left: 0;
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    
+  }
+
+  
+}

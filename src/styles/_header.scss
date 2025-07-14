@@ -1,0 +1,236 @@
+@use "./header.mobile";
+@use "./kit/mixins" as mx;
+@use "./kit/functions" as f;
+
+@include mx.font-face("SourceSansPro Regular", "source-sans-pro.regular");
+@include mx.font-face("SourceSansPro Semibold", "source-sans-pro.semibold");
+@include mx.font-face("Roboto Bold", "Roboto-Bold");
+
+
+
+.header {
+  background-image: 
+    url('../assets/robot_hero.png'),
+    url('../assets/robot_back.png');
+  background-position: right bottom, left center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 62.5vw, cover; 
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  gap: 13.889vw; 
+}
+.nav__logo {
+  color: f.color("main-text");
+  font-size: 1.111vw; 
+  line-height: 1.389vw; 
+  padding-left: 11.806vw; 
+  font-family: "SourceSansPro Semibold", sans-serif;
+}
+
+.nav__list {
+  display: flex;
+  gap: 2vw;
+}
+
+.nav__item {
+  list-style-type: none;
+}
+
+.nav__link {
+  @include mx.text-color("main-text");
+  font-size: 0.972vw;
+  line-height: 1.111vw;
+  font-family: "SourceSansPro Regular", sans-serif;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-bottom: 2px solid f.color("accent"); 
+    @include mx.text-color("accent");
+  }
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  gap: 13.889vw;
+  position: relative;
+}
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1002;
+  margin-left: auto;
+
+  .bar {
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  }
+}
+
+
+
+.nav__toggle.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+.nav__toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__toggle.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(45deg);
+}
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  height: 41.528vw; 
+}
+
+.hero__logo {
+  width: 13.194vw; 
+  height: auto;
+}
+
+.hero__container {
+  flex-direction: column;
+  align-items: center;
+  width: 27.778vw; 
+  display: flex;
+  gap: 1.389vw; 
+  padding: 0 0 3.472vw 17.417vw; 
+}
+
+.hero__title {
+  @include mx.text-color("main-text");
+  font-size: 4.514vw; 
+  line-height: 5.347vw; 
+  font-family: "Roboto Bold", sans-serif;
+}
+
+.hero__desc {
+  @include mx.text-color("secondary-text");
+  font-size: 1.5vw; 
+  line-height: 2.222vw; 
+  text-align: left;
+  font-family: "SourceSansPro Regular", sans-serif;
+}
+
+@media (max-width: 767px) {
+  .nav__toggle {
+    display: flex;
+    margin-right: 3vw;
+    
+  }
+  .nav__logo{
+    font-size: 4vw;
+    padding-left: 3.8vw;
+  }
+  .nav__link {
+    @include mx.text-color("main-text");
+    font-size: 1.2em;
+    text-decoration: none;
+  
+
+  &:hover {
+    border-bottom: 2px solid f.color("footer-background"); 
+    @include mx.text-color("footer-background");
+  }
+}
+
+  .nav__list {
+    position: fixed;
+    top: 15%;
+    right: -350px;        
+    width: 275px;
+    height: 275px;
+    background-color: #3BAFDA;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+    z-index: 1001;
+
+    .nav__item {
+      list-style: none;
+      padding: 3vw 0 0 5vw;
+    }
+  }
+
+  .nav__list.open {
+    right: -28%;
+    margin: 0;
+  }
+
+  .nav__container {
+    justify-content: space-between;
+    height: 10vh;
+  }
+  .nav__toggle.open{
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    z-index: 1005;
+
+  }
+  .header {
+    background-color: #181818;
+    background-image: none;
+    padding:2vw 0 0 0 ;
+  }
+
+  .hero {
+    height: 67vh; 
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.29), rgba(0, 0, 0, 0.29)), 
+    url('../assets/robot_mobile.png')  ,
+    linear-gradient(to bottom, #5A453100 0%, #352516FF 100%);
+    background-position: left bottom, left center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover; 
+    align-items: center;
+    
+  }
+  .hero__container {
+    padding: 0 0 6vh 0;
+    gap: 0;
+    width: 55vw;
+     
+  }
+  .hero__title {
+    text-align: center;
+    padding-bottom: 10vh;
+    font-size: 11vw;
+    line-height: 13vw;
+  }
+  .hero__desc {
+    text-align: center;
+    font-size: 4.5vw;
+    line-height: 6vw;
+  }
+  .hero__logo {
+    width: 45vw; 
+    height: auto;
+  }
+}

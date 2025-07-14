@@ -1,0 +1,21 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="rectangle" viewBox="0 0 56 32">
+  <path
+    fill="none"
+    stroke="white"
+    stroke-width="2"
+    stroke-linejoin="miter"
+    stroke-linecap="butt"
+    stroke-miterlimit="4"
+    d="M1.889 0.236h51.838c0.913 0 1.653 0.74 1.653 1.653v28.221c0 0.913-0.74 1.653-1.653 1.653h-51.838c-0.913 0-1.653-0.74-1.653-1.653v-28.221c0-0.913 0.74-1.653 1.653-1.653z"
+  />
+</symbol>
+<symbol id="mobile-menu" viewBox="0 0 41 32">
+<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="5.6471" d="M0 2.824h41.412M0 15.287h41.412M0 27.748h41.412"></path>
+</symbol>
+<symbol id="play-btn" viewBox="0 0 35 32">
+<path d="M34.041 14.935c1.172 0.526 1.172 2.19 0 2.716l-31.392 14.090c-0.985 0.442-2.098-0.278-2.098-1.358v-28.18c0-1.079 1.113-1.8 2.098-1.358l31.392 14.090z"></path>
+</symbol>
+</defs>
+</svg>
