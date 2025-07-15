@@ -10,8 +10,8 @@
 
 .header {
   background-image: 
-    url('../assets/robot_hero.png'),
-    url('../assets/robot_back.png');
+    url('/docs/assets/robot_hero.png'),
+    url('/docs/assets/robot_back.png');
   background-position: right bottom, left center;
   background-repeat: no-repeat, no-repeat;
   background-size: 62.5vw, cover; 
@@ -204,7 +204,7 @@
     height: 67vh; 
     background-image: 
     linear-gradient(rgba(0, 0, 0, 0.29), rgba(0, 0, 0, 0.29)), 
-    url('../assets/robot_mobile.png')  ,
+    url('/docs/assets/robot_mobile.png')  ,
     linear-gradient(to bottom, #5A453100 0%, #352516FF 100%);
     background-position: left bottom, left center;
     background-repeat: no-repeat, no-repeat;
